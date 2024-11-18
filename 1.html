@@ -13,11 +13,44 @@
         width: 150px; /* Ajusta el tamaño del logo */
         z-index: 10;
       }
+
+    /* Estilo para los botones de zoom */
+    .zoom-button {
+        position: fixed;
+        top: 60px; /* Justo debajo del botón de pantalla completa */
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 50%;
+        color: white;
+        cursor: pointer;
+        z-index: 10;
+        outline: none;
+      }
+
+      #zoom-out {
+        top: 110px; /* Espacio debajo del botón de zoom in */
+      }
+
+      .zoom-icon {
+        width: 24px;
+        height: 24px;
+      }
     </style>
   </head>
   <body>
     <!-- Logo de la empresa -->
     <img id="logo" src="./images/Logo_Lara.png" alt="Logo de la Empresa">
+
+    <!-- Controles de Zoom -->
+    <button id="zoom-in" class="zoom-button">
+      <img src="https://img.icons8.com/ios/100/plus--v1.png" class="zoom-icon" alt="Zoom In">
+    </button>
+    <button id="zoom-out" class="zoom-button">
+      <img src="https://img.icons8.com/ios/100/minus.png" class="zoom-icon" alt="Zoom Out">
+    </button>
 
     <!-- Escena de A-Frame -->
     <a-scene>
