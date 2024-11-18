@@ -13,94 +13,39 @@
         width: 150px; /* Ajusta el tamaño del logo */
         z-index: 10;
       }
-
-      /* Estilo para los botones de zoom */
-      #zoom-controls {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 10;
-      }
-      #zoom-in, #zoom-out {
-        margin: 5px;
-        padding: 10px;
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-      }
     </style>
   </head>
   <body>
     <!-- Logo de la empresa -->
     <img id="logo" src="./images/Logo_Lara.png" alt="Logo de la Empresa">
 
-    <!-- Controles de Zoom -->
-    <div id="zoom-controls">
-      <button id="zoom-in">Zoom In</button>
-      <button id="zoom-out">Zoom Out</button>
-    </div>
-
     <!-- Escena de A-Frame -->
     <a-scene>
       <!-- Añadir un cursor para interactuar con la escena -->
       <a-entity 
-        id="camera"
         camera 
         look-controls 
-        position="0 1.6 0" 
-        rotation="0 0 0"
-        zoom="1"
+        rotation="0 0 0"  
       >
         <a-cursor id="cursor" color="#FF0000" raycaster="objects: .clickable" fuse="true" fuse-timeout="500"></a-cursor>
       </a-entity>
 
-      <!-- Imagen 360 de la primera escena -->
-      <a-sky src="./images/1_2 - Panorama.jpg"></a-sky>
+      <!-- Imagen 360 de la primera escena, con rotación inicial -->
+      <a-sky src="./images/1_1 - Panorama.jpg" rotation="0 -87 0"></a-sky>
 
-      <!-- Botones personalizados como esferas con transparencia -->
-      <a-sphere id="to-scene6" position="-20.931 1 0.328" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
-      <a-sphere id="to-scene8" position="-15.530 1.060 -11.040" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
-      <a-sphere id="to-scene4" position="-7.310 1.060 -24.110" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
-      <a-sphere id="to-scene1" position="12.270 1.060 -2.980" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <!-- Botones personalizados como esferas con transparencia y bajados -->
+      <a-sphere id="to-scene2" position="-14.090 0.6 -15.460" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
+      <a-sphere id="to-scene3" position="15.670 0.6 -15.460" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
     </a-scene>
 
     <script>
-      // Añadir los enlaces de navegación utilizando eventos 'click'
-      document.querySelector("#to-scene6").addEventListener("click", () => {
-        window.location.href = "./6.html";
+      // Manejar los eventos de navegación usando JavaScript
+      document.querySelector("#to-scene2").addEventListener("click", () => {
+        window.location.href = "./2.html";
       });
 
-      document.querySelector("#to-scene8").addEventListener("click", () => {
-        window.location.href = "./8.html";
-      });
-
-      document.querySelector("#to-scene4").addEventListener("click", () => {
-        window.location.href = "./4.html";
-      });
-    
-      document.querySelector("#to-scene1").addEventListener("click", () => {
-        window.location.href = "./1.html";
-      });
-
-      // Funcionalidad de Zoom
-      const camera = document.querySelector('#camera');
-      const zoomInButton = document.querySelector('#zoom-in');
-      const zoomOutButton = document.querySelector('#zoom-out');
-
-      zoomInButton.addEventListener('click', () => {
-        let currentZoom = camera.getAttribute('camera').zoom;
-        if (currentZoom < 5) {  // Establecer un límite máximo de zoom
-          camera.setAttribute('camera', 'zoom', currentZoom + 0.1);
-        }
-      });
-
-      zoomOutButton.addEventListener('click', () => {
-        let currentZoom = camera.getAttribute('camera').zoom;
-        if (currentZoom > 0.5) {  // Establecer un límite mínimo de zoom
-          camera.setAttribute('camera', 'zoom', currentZoom - 0.1);
-        }
+      document.querySelector("#to-scene3").addEventListener("click", () => {
+        window.location.href = "./3.html";
       });
     </script>
   </body>
