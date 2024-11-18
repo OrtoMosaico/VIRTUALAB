@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recorrido Virtual - Escena 1</title>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Imagen 360 de la primera escena -->
+      <a-sky src="./images/1_1 - Panorama.jpg"></a-sky>
+
+      <!-- Enlaces a otras escenas (botones personalizados) -->
+      <a-plane id="to-scene2" position="-14 1.6 11" width="1" height="1" material="shader: flat"></a-plane>
+      <a-plane id="to-scene3" position="-14 1.6 -14.5" width="1" height="1" material="shader: flat"></a-plane>
+    </a-scene>
+
+    <script>
+      // Definir la URL de la imagen del botón (CDN)
+      const buttonImageUrl = "<img width="50" height="50" src="https://img.icons8.com/ios-filled/50/circled-chevron-up.png" alt="circled-chevron-up"/>";
+
+      // Asignar la imagen a los botones
+      document.querySelector("#to-scene2").setAttribute("src", buttonImageUrl);
+      document.querySelector("#to-scene3").setAttribute("src", buttonImageUrl);
+
+      // Añadir los enlaces de navegación
+      document.querySelector("#to-scene2").innerHTML = '<a-link href="./scene2.html"></a-link>';
+      document.querySelector("#to-scene3").innerHTML = '<a-link href="./scene3.html"></a-link>';
+    </script>
+  </body>
+</html>
