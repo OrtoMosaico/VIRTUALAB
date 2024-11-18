@@ -1,38 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Recorrido Virtual</title>
+    <title>Recorrido Virtual - Escena 1</title>
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
-      <!-- Imagen 360 inicial -->
-      <a-sky id="sky" src="URL_IMAGEN_1.jpg"></a-sky>
+      <!-- Imagen 360 de la primera escena -->
+      <a-sky src="./images/1_1 - Panorama.jpg"></a-sky>
 
-      <!-- Botón para ir a otra escena -->
-      <a-entity id="next-button" position="2 1.6 -3" geometry="primitive: sphere; radius: 0.5" material="color: blue" cursor-listener>
-        <a-text value="Ir a escena 2" position="0 0.6 0"></a-text>
+      <!-- Enlace a la escena 2 -->
+      <a-entity position="2 1.6 -3" geometry="primitive: sphere; radius: 0.5" material="color: blue">
+        <a-text value="Ir a Escena 2" position="0 0.6 0"></a-text>
+        <a-link href="./scene2.html" position="0 -1 0"></a-link>
       </a-entity>
     </a-scene>
-
-    <script>
-      // URLs de las imágenes 360
-      const images = [
-        "URL_IMAGEN_1.jpg",
-        "URL_IMAGEN_2.jpg",
-        "URL_IMAGEN_3.jpg",
-        // Agrega más URLs aquí...
-      ];
-
-      // Variable para rastrear la escena actual
-      let currentScene = 0;
-
-      // Cambia la imagen del cielo
-      const sky = document.querySelector("#sky");
-      document.querySelector("#next-button").addEventListener("click", () => {
-        currentScene = (currentScene + 1) % images.length; // Navega circularmente
-        sky.setAttribute("src", images[currentScene]);
-      });
-    </script>
   </body>
 </html>
