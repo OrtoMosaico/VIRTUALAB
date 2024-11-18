@@ -38,7 +38,7 @@
       <a-sky src="./images/1_2 - Panorama.jpg"></a-sky>
 
       <!-- Botones personalizados como esferas con transparencia -->
-      <a-sphere id="to-scene2" position="-20.931 1 0.328" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
+      <a-sphere id="to-scene6" position="-20.931 1 0.328" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
       <a-sphere id="to-scene3" position="-15.530 1.060 -11.040" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
       <a-sphere id="to-scene3" position="-7.310 1.060 -24.110" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
       <a-sphere id="to-scene1" position="12.270 1.060 -2.980" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
@@ -46,41 +46,34 @@
 
     <script>
       // Añadir los enlaces de navegación utilizando eventos 'click'
-      document.querySelector("#to-scene2").addEventListener("mouseenter", () => {
-        document.querySelector("#to-scene2").addEventListener("click", () => {
-          window.location.href = "./2.html";
+
+
+      document.querySelector("#to-scene6").addEventListener("mouseenter", () => {
+        document.querySelector("#to-scene6").addEventListener("click", () => {
+          window.location.href = "./6.html";
         });
       });
 
-      document.querySelector("#to-scene3").addEventListener("mouseenter", () => {
-        document.querySelector("#to-scene3").addEventListener("click", () => {
-          window.location.href = "./scene3.html";
+      document.querySelector("#to-scene8").addEventListener("mouseenter", () => {
+        document.querySelector("#to-scene8").addEventListener("click", () => {
+          window.location.href = "./scene8.html";
         });
       });
 
-      document.querySelector("#to-scene2").addEventListener("mouseenter", () => {
-        document.querySelector("#to-scene2").addEventListener("click", () => {
-          window.location.href = "./2.html";
+      document.querySelector("#to-scene4").addEventListener("mouseenter", () => {
+        document.querySelector("#to-scene4").addEventListener("click", () => {
+          window.location.href = "./4.html";
         });
       });
-
-      document.querySelector("#to-scene2").addEventListener("mouseenter", () => {
-        document.querySelector("#to-scene2").addEventListener("click", () => {
-          window.location.href = "./2.html";
-        });
-      });
-
-      document.querySelector("#to-scene2").addEventListener("mouseenter", () => {
-        document.querySelector("#to-scene2").addEventListener("click", () => {
-          window.location.href = "./2.html";
-        });
-      });
+    
 
       document.querySelector("#to-scene1").addEventListener("mouseenter", () => {
         document.querySelector("#to-scene1").addEventListener("click", () => {
           window.location.href = "./1.html";
         });
       });
+
+      
     </script>
   </body>
 </html>
