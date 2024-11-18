@@ -9,9 +9,9 @@
       <!-- Imagen 360 de la primera escena -->
       <a-sky src="./images/1_1 - Panorama.jpg"></a-sky>
 
-      <!-- Botones personalizados utilizando imágenes -->
-      <a-plane id="to-scene2" src="./images/arrow.png" position="2 1.6 -3" width="1" height="1" material="shader: flat"></a-plane>
-      <a-plane id="to-scene3" src="./images/arrow.png" position="-2 1.6 -3" width="1" height="1" material="shader: flat"></a-plane>
+      <!-- Botones personalizados como esferas con transparencia -->
+      <a-sphere id="to-scene2" position="2 1.6 -3" radius="0.5" color="#FF0000" material="opacity: 0.6; transparent: true"></a-sphere>
+      <a-sphere id="to-scene3" position="-2 1.6 -3" radius="0.5" color="#00FF00" material="opacity: 0.6; transparent: true"></a-sphere>
     </a-scene>
 
     <script>
