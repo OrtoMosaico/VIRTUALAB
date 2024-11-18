@@ -5,21 +5,14 @@
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
   </head>
   <body>
-    <!-- Escena de A-Frame -->
     <a-scene>
       <!-- Imagen 360 de la primera escena -->
-      <a-sky src="./images/image1.jpg"></a-sky>
+      <a-sky src="./images/1_1 - Panorama.jpg"></a-sky>
 
       <!-- Enlace a la escena 2 -->
-      <a-entity position="2 1.6 -3" geometry="primitive: sphere; radius: 0.5" material="color: blue" class="clickable">
-        <a-text value="Ir a Escena 2" position="0 0.6 0" align="center"></a-text>
+      <a-entity position="2 1.6 -3" geometry="primitive: sphere; radius: 0.5" material="color: blue">
+        <a-text value="Ir a Escena 2" position="0 0.6 0"></a-text>
         <a-link href="./scene2.html" position="0 -1 0"></a-link>
-      </a-entity>
-
-      <!-- Enlace a la escena 3 -->
-      <a-entity position="-3 1.6 -3" geometry="primitive: sphere; radius: 0.5" material="color: green" class="clickable">
-        <a-text value="Ir a Escena 3" position="0 0.6 0" align="center"></a-text>
-        <a-link href="./scene3.html" position="0 -1 0"></a-link>
       </a-entity>
     </a-scene>
   </body>
