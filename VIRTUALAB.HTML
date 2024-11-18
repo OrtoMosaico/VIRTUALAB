@@ -1,19 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Recorrido Virtual - Escena 1</title>
+    <title>Recorrido Virtual en 360°</title>
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
   </head>
   <body>
+    <!-- Escena de A-Frame -->
     <a-scene>
-      <!-- Imagen 360 de la primera escena -->
-      <a-sky src="./images/1_1 - Panorama.jpg"></a-sky>
+      <!-- Imagen 360 inicial -->
+      <a-sky id="sky" src="./images/1_1 - Panorama.jpg"></a-sky>
 
-      <!-- Enlace a la escena 2 -->
-      <a-entity position="-14.189 1.6 11" geometry="primitive: sphere; radius: 0.5" material="color: blue">
-        <a-text value="Ir a Escena 2" position="0 0.6 0"></a-text>
-        <a-link href="./scene2.html" position="0 -1 0"></a-link>
+      <!-- Botones interactivos para cambiar la imagen -->
+      <a-entity id="button1" position="-14 1.6 11" geometry="primitive: sphere; radius: 0.5" material="color: blue">
+        <a-text value="Ir a Escena 2" position="0 0.6 0" align="center"></a-text>
+      </a-entity>
+
+      <a-entity id="button2" position="-14 1.6 -14.5" geometry="primitive: sphere; radius: 0.5" material="color: green">
+        <a-text value="Ir a Escena 3" position="0 0.6 0" align="center"></a-text>
+      </a-entity>
+
+      <a-entity id="button3" position="0 1.6 -3" geometry="primitive: sphere; radius: 0.5" material="color: red">
+        <a-text value="Regresar a Escena 1" position="0 0.6 0" align="center"></a-text>
       </a-entity>
     </a-scene>
+
+    <!-- Script para cambiar dinámicamente la imagen -->
+    <script>
+      // URLs de las imágenes 360
+      const images = [
+        "./images/1_1 - Panorama.jpg",
+        "./images/1_2 - Panorama.jpg",
+        "./images/1_3 - Panorama.jpg"
+        // Agrega más URLs aquí si tienes más imágenes
+      ];
+
+      // Variable para rastrear la escena actual
+      let currentScene = 0;
+
+      // Selecciona el elemento <a-sky> y los botones
+      const sky = document.querySelector("#sky");
+      const button1 = document.querySelector("#button1");
+      const button2 = document.querySelector("#button2");
+      const button3 = document.querySelector("#button3");
+
+      // Event listener para cambiar a Escena 2
+      button1.addEventListener("click", () => {
+        currentScene = 1; // Índice de la imagen 2
+        sky.setAttribute("src", images[currentScene]);
+      });
+
+      // Event listener para cambiar a Escena 3
+      button2.addEventListener("click", () => {
+        currentScene = 2; // Índice de la imagen 3
+        sky.setAttribute("src", images[currentScene]);
+      });
+
+      // Event listener para regresar a Escena 1
+      button3.addEventListener("click", () => {
+        currentScene = 0; // Índice de la imagen 1
+        sky.setAttribute("src", images[currentScene]);
+      });
+    </script>
   </body>
 </html>
