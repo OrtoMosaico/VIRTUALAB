@@ -24,17 +24,14 @@
       <!-- Añadir un cursor para interactuar con la escena -->
       <a-entity 
         camera 
-
-        
         look-controls 
-
-        rotation="0 -90 0"  
+        rotation="0 -87 0"  
       >
         <a-cursor id="cursor" color="#FF0000" raycaster="objects: .clickable" fuse="true" fuse-timeout="500"></a-cursor>
       </a-entity>
 
-      <!-- Imagen 360 de la primera escena -->
-      <a-sky src="./images/1_1 - Panorama.jpg"></a-sky>
+      <!-- Imagen 360 de la primera escena, con rotación inicial -->
+      <a-sky src="./images/1_1 - Panorama.jpg" rotation="0 90 0"></a-sky>
 
       <!-- Plano como suelo -->
       <a-plane position="0 -0.5 0" rotation="-90 0 0" width="20" height="20" color="#7CFC00" material="opacity: 0; transparent: true"></a-plane>
