@@ -10,17 +10,17 @@
       <a-sky src="./images/1_1 - Panorama.jpg"></a-sky>
 
       <!-- Enlaces a otras escenas (botones personalizados) -->
-      <a-plane id="to-scene2" position="-14 1.6 11" width="1" height="1" material="shader: flat"></a-plane>
-      <a-plane id="to-scene3" position="-14 1.6 -14.5" width="1" height="1" material="shader: flat"></a-plane>
+      <a-plane id="to-scene2" position="2 1.6 -3" width="1" height="1" material="shader: flat"></a-plane>
+      <a-plane id="to-scene3" position="-2 1.6 -3" width="1" height="1" material="shader: flat"></a-plane>
     </a-scene>
 
     <script>
       // Definir la URL de la imagen del botón (CDN)
-      const buttonImageUrl = "https://img.icons8.com/ios-filled/100/circled-chevron-up.png";
+      const buttonImageUrl = "https://img.icons8.com/ios-filled/50/circled-chevron-up.png";
 
-      // Asignar la imagen a los botones
-      document.querySelector("#to-scene2").setAttribute("src", buttonImageUrl);
-      document.querySelector("#to-scene3").setAttribute("src", buttonImageUrl);
+      // Asignar la imagen a los botones usando el atributo 'material'
+      document.querySelector("#to-scene2").setAttribute("material", `src: url(${buttonImageUrl}); shader: flat`);
+      document.querySelector("#to-scene3").setAttribute("material", `src: url(${buttonImageUrl}); shader: flat`);
 
       // Añadir los enlaces de navegación
       document.querySelector("#to-scene2").innerHTML = '<a-link href="./scene2.html"></a-link>';
