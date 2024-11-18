@@ -31,21 +31,21 @@
       </a-entity>
 
       <!-- Imagen 360 de la primera escena, con rotación inicial -->
-      <a-sky src="./images/1_3 - Panorama.jpg" rotation="0 -87 0"></a-sky>
+      <a-sky src="./images/1_3 - Panorama.jpg" rotation="0 -141 0"></a-sky>
 
       <!-- Botones personalizados como esferas con transparencia y bajados -->
-      <a-sphere id="to-scene2" position="-14.090 0.6 -15.460" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
-      <a-sphere id="to-scene3" position="15.670 0.6 -15.460" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
+      <a-sphere id="to-scene1" position="-4.510 -0.680 17.690" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
+      <a-sphere id="to-scene4" position="-0.010 -3.270 -15.460" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
     </a-scene>
 
     <script>
       // Manejar los eventos de navegación usando JavaScript
-      document.querySelector("#to-scene2").addEventListener("click", () => {
-        window.location.href = "./2.html";
+      document.querySelector("#to-scene1").addEventListener("click", () => {
+        window.location.href = "./1.html";
       });
 
-      document.querySelector("#to-scene3").addEventListener("click", () => {
-        window.location.href = "./scene3.html";
+      document.querySelector("#to-scene4").addEventListener("click", () => {
+        window.location.href = "./4.html";
       });
     </script>
   </body>
