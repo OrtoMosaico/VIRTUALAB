@@ -22,7 +22,12 @@
     <!-- Escena de A-Frame -->
     <a-scene>
       <!-- Añadir un cursor para interactuar con la escena -->
-      <a-entity camera look-controls position="0 1 0">
+      <a-entity 
+        camera 
+        look-controls 
+        position="0 1.6 5"  <!-- Posición inicial de la cámara -->
+        rotation="0 -45 0"  <!-- Rotación inicial de la cámara para mirar hacia una dirección específica -->
+      >
         <a-cursor id="cursor" color="#FF0000" raycaster="objects: .clickable" fuse="true" fuse-timeout="500"></a-cursor>
       </a-entity>
 
@@ -30,7 +35,7 @@
       <a-sky src="./images/1_1 - Panorama.jpg"></a-sky>
 
       <!-- Plano como suelo -->
-      <a-plane position="0 -0.5 0" rotation="-90 0 0" width="20" height="20" color="#7CFC00"></a-plane>
+      <a-plane position="0 -0.5 0" rotation="-90 0 0" width="20" height="20" color="#7CFC00" material="opacity: 0; transparent: true"></a-plane>
 
       <!-- Botones personalizados como esferas con transparencia y bajados -->
       <a-sphere id="to-scene2" position="2 0.6 -3" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
