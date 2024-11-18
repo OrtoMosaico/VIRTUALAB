@@ -20,11 +20,11 @@
 
     <!-- Escena de A-Frame -->
     <a-scene>
-      <!-- Añadir un cursor para interactuar con la escena
+      <!-- Añadir un cursor para interactuar con la escena -->
       <a-entity camera look-controls>
-        <a-cursor color="#FF0000"></a-cursor>
-      </a-entity> 
-    -->
+        <a-cursor id="cursor" color="#FF0000" raycaster="objects: .clickable"></a-cursor>
+      </a-entity>
+
       <!-- Imagen 360 de la primera escena -->
       <a-sky src="./images/1_1 - Panorama.jpg"></a-sky>
 
@@ -35,12 +35,16 @@
 
     <script>
       // Añadir los enlaces de navegación utilizando eventos 'click'
-      document.querySelector("#to-scene2").addEventListener("click", () => {
-        window.location.href = "./2.html";
+      document.querySelector("#to-scene2").addEventListener("mouseenter", () => {
+        document.querySelector("#to-scene2").addEventListener("click", () => {
+          window.location.href = "./2.html";
+        });
       });
 
-      document.querySelector("#to-scene3").addEventListener("click", () => {
-        window.location.href = "./scene3.html";
+      document.querySelector("#to-scene3").addEventListener("mouseenter", () => {
+        document.querySelector("#to-scene3").addEventListener("click", () => {
+          window.location.href = "./scene3.html";
+        });
       });
     </script>
   </body>
