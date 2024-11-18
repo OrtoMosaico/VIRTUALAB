@@ -9,6 +9,65 @@
         position: fixed;
         top: 10px;
         left: 10px;
+        width: 100px; /* Ajusta el tamaño del logo */
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Logo de la empresa -->
+    <img id="logo" src="./images/Logo_Lara.png" alt="Logo de la Empresa">
+
+    <!-- Escena de A-Frame -->
+    <a-scene>
+      <!-- Añadir un cursor para interactuar con la escena -->
+      <a-entity camera look-controls>
+        <a-cursor color="#FF0000"></a-cursor>
+      </a-entity>
+
+      <!-- Imagen 360 de la primera escena -->
+      <a-sky src="./images/1_1 - Panorama.jpg"></a-sky>
+
+      <!-- Botones personalizados como esferas con transparencia -->
+      <a-sphere id="to-scene2" position="2 1.6 -3" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
+      <a-sphere id="to-scene3" position="-2 1.6 -3" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
+    </a-scene>
+
+    <script>
+      // Añadir los enlaces de navegación utilizando eventos 'click'
+      document.querySelector("#to-scene2").addEventListener("click", () => {
+        window.location.href = "./scene2.html";
+      });
+
+      document.querySelector("#to-scene3").addEventListener("click", () => {
+        window.location.href = "./scene3.html";
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recorrido Virtual - Escena 1</title>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <style>
+      /* Estilo para el logo de la empresa */
+      #logo {
+        position: fixed;
+        top: 10px;
+        left: 10px;
         width: 150px; /* Ajusta el tamaño del logo */
         z-index: 10;
       }
