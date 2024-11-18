@@ -9,22 +9,20 @@
       <!-- Imagen 360 de la primera escena -->
       <a-sky src="./images/1_1 - Panorama.jpg"></a-sky>
 
-      <!-- Enlaces a otras escenas (botones personalizados) -->
-      <a-plane id="to-scene2" position="2 1.6 -3" width="1" height="1" material="shader: flat"></a-plane>
-      <a-plane id="to-scene3" position="-2 1.6 -3" width="1" height="1" material="shader: flat"></a-plane>
+      <!-- Botones personalizados utilizando imágenes -->
+      <a-plane id="to-scene2" src="./images/arrow.png" position="2 1.6 -3" width="1" height="1" material="shader: flat"></a-plane>
+      <a-plane id="to-scene3" src="./images/arrow.png" position="-2 1.6 -3" width="1" height="1" material="shader: flat"></a-plane>
     </a-scene>
 
     <script>
-      // Definir la ruta local de la imagen del botón
-      const buttonImageUrl = "./images/arrow.png";
+      // Añadir los enlaces de navegación directamente a los botones
+      document.querySelector("#to-scene2").addEventListener("click", () => {
+        window.location.href = "./scene2.html";
+      });
 
-      // Asignar la imagen a los botones usando el atributo 'material'
-      document.querySelector("#to-scene2").setAttribute("material", `src: url(${buttonImageUrl}); shader: flat`);
-      document.querySelector("#to-scene3").setAttribute("material", `src: url(${buttonImageUrl}); shader: flat`);
-
-      // Añadir los enlaces de navegación
-      document.querySelector("#to-scene2").innerHTML = '<a-link href="./scene2.html"></a-link>';
-      document.querySelector("#to-scene3").innerHTML = '<a-link href="./scene3.html"></a-link>';
+      document.querySelector("#to-scene3").addEventListener("click", () => {
+        window.location.href = "./scene3.html";
+      });
     </script>
   </body>
 </html>
