@@ -13,8 +13,6 @@
         width: 150px; /* Ajusta el tamaño del logo */
         z-index: 10;
       }
-
-      
     </style>
   </head>
   <body>
@@ -25,8 +23,10 @@
     <a-scene>
       <!-- Añadir un cursor para interactuar con la escena -->
       <a-entity 
+        id="camera" <!-- Añadir un identificador único a la cámara -->
         camera 
         look-controls 
+        position="0 1.6 0"
         rotation="0 0 0"  
       >
         <a-cursor id="cursor" color="#FF0000" raycaster="objects: .clickable" fuse="true" fuse-timeout="500"></a-cursor>
@@ -50,8 +50,8 @@
         window.location.href = "./3.html";
       });
 
-            // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
-            const camera = document.querySelector('#camera');
+      // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
+      const camera = document.querySelector('#camera');  // Asegurarse de que la cámara sea seleccionada correctamente
       let initialDistance = null;
 
       // Zoom con el Scroll del Ratón
@@ -96,7 +96,6 @@
         const dy = touch1.clientY - touch2.clientY;
         return Math.sqrt(dx * dx + dy * dy);
       }
-      
     </script>
   </body>
 </html>
