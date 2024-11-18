@@ -40,6 +40,9 @@
       <a-sphere id="to-scene28" position="19.540 1 -9.280" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
       <a-sphere id="to-scene6" position="12.230 0.6 -17.720" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
       <a-sphere id="to-scene29" position="23.290 1 -7.290" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <a-sphere id="to-scene32" position="23.290 1 -7.290" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <a-sphere id="to-scene31" position="23.290 1 -7.290" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      
     </a-scene>
 
     <script>
@@ -55,6 +58,16 @@
       document.querySelector("#to-scene29").addEventListener("click", () => {
         window.location.href = "./29.html";
       });
+
+      document.querySelector("#to-scene32").addEventListener("click", () => {
+        window.location.href = "./32.html";
+      });
+
+
+      document.querySelector("#to-scene31").addEventListener("click", () => {
+        window.location.href = "./31.html";
+      });
+
 
 // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
 const camera = document.querySelector('#camera');
