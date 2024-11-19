@@ -34,18 +34,22 @@
       </a-entity>
 
       <!-- Imagen 360 de la primera escena, con rotación inicial -->
-      <a-sky src="./images/3_4 - Panorama.jpg" rotation="0 30 0"></a-sky>
+      <a-sky src="./images/3_4 - Panorama.jpg" rotation="0 -85 0"></a-sky>
 
-      <a-sphere id="to-scene32" position="-14.477 0 8.836" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <a-sphere id="to-scene33" position="4.951 0 10.568" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <a-sphere id="to-scene35" position="11.166 0.169 10.568" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
      
     </a-scene>
 
     <script>
       // Añadir los enlaces de navegación utilizando eventos 'click' de manera más simple
-      document.querySelector("#to-scene32").addEventListener("click", () => {
-        window.location.href = "./32.html";
+      document.querySelector("#to-scene33").addEventListener("click", () => {
+        window.location.href = "./33.html";
       });
 
+      document.querySelector("#to-scene35").addEventListener("click", () => {
+        window.location.href = "./35.html";
+      });
       
 
 // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
