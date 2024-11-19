@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recorrido Virtual - Escena 1</title>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ngokevin/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <style>
+      /* Estilo para el logo de la empresa */
+      #logo {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        width: 150px; /* Ajusta el tamaño del logo */
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Logo de la empresa -->
+    <img id="logo" src="./images/Logo_Lara.png" alt="Logo de la Empresa">
+
+    <!-- Escena de A-Frame -->
+    <a-scene>
+      <!-- Añadir un cursor para interactuar con la escena -->
+      <a-entity 
+      id="camera"
+      camera 
+      look-controls 
+      position="0 1.6 0" 
+      rotation="0 0 0"
+      zoom="1"
+      >
+        <a-cursor id="cursor" color="#FF0000" raycaster="objects: .clickable" fuse="true" fuse-timeout="500"></a-cursor>
+      </a-entity>
+
+      <!-- Imagen 360 de la primera escena, con rotación inicial -->
+      <a-sky src="./images/3_7 - Panorama.jpg" rotation="0 -85 0"></a-sky>
+
+      <a-sphere id="to-scene33" position="4.951 0 10.568" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      
+    </a-scene>
+
+    <script>
+      // Añadir los enlaces de navegación utilizando eventos 'click' de manera más simple
+      document.querySelector("#to-scene33").addEventListener("click", () => {
+        window.location.href = "./33.html";
+      });
+
+
+// Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
+const camera = document.querySelector('#camera');
+      let initialDistance = null;
+
+      // Zoom con el Scroll del Ratón
+      window.addEventListener('wheel', (event) => {
+        let currentZoom = camera.getAttribute('camera').zoom;
+        if (event.deltaY < 0 && currentZoom < 5) {
+          camera.setAttribute('camera', 'zoom', currentZoom + 0.1);
+        } else if (event.deltaY > 0 && currentZoom > 0.5) {
+          camera.setAttribute('camera', 'zoom', currentZoom - 0.1);
+        }
+      });
+
+      // Zoom con Gestos de Pinza en Dispositivos Móviles
+      window.addEventListener('touchstart', (event) => {
+        if (event.touches.length === 2) {
+          initialDistance = getDistance(event.touches[0], event.touches[1]);
+        }
+      });
+
+      window.addEventListener('touchmove', (event) => {
+        if (event.touches.length === 2 && initialDistance !== null) {
+          const currentDistance = getDistance(event.touches[0], event.touches[1]);
+          let currentZoom = camera.getAttribute('camera').zoom;
+          if (currentDistance > initialDistance && currentZoom < 5) {
+            camera.setAttribute('camera', 'zoom', currentZoom + 0.05);
+          } else if (currentDistance < initialDistance && currentZoom > 0.5) {
+            camera.setAttribute('camera', 'zoom', currentZoom - 0.05);
+          }
+          initialDistance = currentDistance;
+        }
+      });
+
+      window.addEventListener('touchend', (event) => {
+        if (event.touches.length < 2) {
+          initialDistance = null;
+        }
+      });
+
+      // Función para Calcular la Distancia Entre dos Puntos de Contacto
+      function getDistance(touch1, touch2) {
+        const dx = touch1.clientX - touch2.clientX;
+        const dy = touch1.clientY - touch2.clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+      }
+
+    </script>
+  </body>
+</html>
