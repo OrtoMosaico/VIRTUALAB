@@ -1,0 +1,10 @@
+/* Estilo para las esferas en la escena de A-Frame */
+.clickable {
+  opacity: 0.6;
+  color: #a3a3a3;
+  transition: transform 0.3s ease;
+}
+
+.clickable:hover {
+  transform: scale(1.2);
+}
