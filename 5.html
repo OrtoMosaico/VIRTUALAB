@@ -40,6 +40,20 @@
       <a-sphere id="to-scene7" position="13.745 0.696 -2.555" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
       <a-sphere id="to-scene39" position="-13.643 1.029 -13.680" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
       
+      <!-- Burbujas informativas para cada esfera -->
+      <a-entity id="info-bubble-7" visible="false" position="13.745 2.5 -2.555">
+        <a-plane width="2.5" height="1.5" color="#FFFFFF" material="opacity: 0.8" position="0 0 0.1"></a-plane>
+        <a-image src="./images/REAL-11.jpg" width="1" height="1" position="-0.75 0 0.2"></a-image>
+        <a-text value="Información sobre la escena 7" width="2" color="#000000" position="0.5 0.3 0.2"></a-text>
+      </a-entity>
+
+      <a-entity id="info-bubble-39" visible="false" position="-13.643 2.5 -13.680">
+        <a-plane width="2.5" height="1.5" color="#FFFFFF" material="opacity: 0.8" position="0 0 0.1"></a-plane>
+        <a-image src="./images/REAL-17.jpg" width="1" height="1" position="-0.75 0 0.2"></a-image>
+        <a-text value="Información sobre la escena 39" width="2" color="#000000" position="0.5 0.3 0.2"></a-text>
+      </a-entity>
+    </a-scene>
+
          </a-scene>
 
     <script>
