@@ -27,8 +27,7 @@
         id="camera"
         camera 
         look-controls 
-        position="0 1.6 0" 
-        rotation="0 0 0"
+        position="0 1.6 0"
       >
         <a-cursor id="cursor" color="#FF0000" raycaster="objects: .clickable" fuse="true" fuse-timeout="500"></a-cursor>
       </a-entity>
@@ -45,54 +44,39 @@
     <script>
       // Añadir los enlaces de navegación utilizando eventos 'click' con efecto de zoom hacia adelante
       document.querySelector("#to-scene8").addEventListener("click", () => {
-        zoomIn(() => {
+        zoomIn("5.601 -6.307 12.823", () => {
           window.location.href = "./8.html";
         });
       });
 
       document.querySelector("#to-scene31").addEventListener("click", () => {
-        zoomIn(() => {
+        zoomIn("-6.220 -5.000 -13.690", () => {
           window.location.href = "./31.html";
         });
       });
 
       document.querySelector("#to-scene5").addEventListener("click", () => {
-        zoomIn(() => {
+        zoomIn("12.669 0.110 -14.175", () => {
           window.location.href = "./5.html";
         });
       });
 
-      // Función para hacer el efecto de zoom hacia adelante (zoom in)
-      function zoomIn(callback) {
+      // Función para hacer el efecto de zoom hacia adelante (zoom in) utilizando animación
+      function zoomIn(targetPosition, callback) {
         const camera = document.querySelector('#camera');
 
-        // Obtener la dirección hacia la cual está apuntando la cámara
-        const direction = new THREE.Vector3();
-        camera.object3D.getWorldDirection(direction);
+        // Crear una animación para acercar la cámara a la posición del objetivo
+        const animation = document.createElement('a-animation');
+        animation.setAttribute('attribute', 'position');
+        animation.setAttribute('to', targetPosition);
+        animation.setAttribute('dur', '1500'); // Duración de la animación en milisegundos
+        animation.setAttribute('easing', 'ease-in-out');
+        animation.addEventListener('animationend', () => {
+          callback(); // Ejecutar la función de cambio de escena cuando la animación termine
+        });
 
-        // Definir la posición inicial y final para la animación
-        const startPosition = camera.object3D.position.clone();
-        const endPosition = startPosition.add(direction.multiplyScalar(20)); // Avanzar hacia adelante 5 unidades
-
-        const animationDuration = 1500; // Duración de la animación en milisegundos
-        let startTime = null;
-
-        function animateZoom(time) {
-          if (!startTime) startTime = time;
-          const elapsed = time - startTime;
-          const progress = Math.min(elapsed / animationDuration, 1); // Progreso de 0 a 1
-
-          // Interpolación lineal entre la posición inicial y la posición final
-          camera.object3D.position.lerpVectors(startPosition, endPosition, progress);
-
-          if (progress < 1) {
-            requestAnimationFrame(animateZoom);
-          } else {
-            callback(); // Ejecutar la función de cambio de escena cuando la animación termine
-          }
-        }
-
-        requestAnimationFrame(animateZoom);
+        // Añadir la animación a la cámara
+        camera.appendChild(animation);
       }
 
       // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
