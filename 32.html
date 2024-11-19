@@ -40,8 +40,9 @@
       <a-sphere id="to-scene36" position="-20.335 0.110 15.272" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
       <a-sphere id="to-scene37" position="-24.124 0.110 10.857" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
       <a-sphere id="to-scene4" position="-33.234 1.060 19.506" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
-      <a-sphere id="to-scene34" position="-33.234 1.060 19.506" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <a-sphere id="to-scene34" position="-15.881 1.060 -4.610" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
       <a-sphere id="to-scene35" position="-4.309 1.060 16.940" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <a-sphere id="to-scene10" position="11.141 1.060 -7.277" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
     </a-scene>
 
     <script>
@@ -69,6 +70,11 @@
             document.querySelector("#to-scene35").addEventListener("click", () => {
         window.location.href = "./35.html";
       });
+
+      document.querySelector("#to-scene10").addEventListener("click", () => {
+        window.location.href = "./10.html";
+      });
+
 // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
 const camera = document.querySelector('#camera');
       let initialDistance = null;
