@@ -15,8 +15,8 @@
         z-index: 10;
       }
 
-      /* Estilo para el desvanecimiento */
-      #fade {
+ /* Estilo para el desvanecimiento */
+ #fade {
         position: fixed;
         top: 0;
         left: 0;
@@ -24,8 +24,9 @@
         height: 100%;
         background: black;
         opacity: 0;
-        transition: opacity 1.5s;
+        transition: opacity 1.5s ease-in-out;
         pointer-events: none; /* No bloquear la interacción del cursor */
+        z-index: 20; /* Asegúrate de que esté por encima de todo */
       }
     </style>
   </head>
@@ -102,13 +103,15 @@
         });
       });
 
-      // Función para hacer el efecto de desvanecimiento
-      function fadeOut(callback) {
+     // Función para hacer el efecto de desvanecimiento
+     function fadeOut(callback) {
         const fadeElement = document.getElementById('fade');
-        fadeElement.style.opacity = '1'; // Desvanecer a negro
-        setTimeout(() => {
+        fadeElement.style.opacity = '1'; // Cambiar la opacidad a 1 para el desvanecimiento
+
+        // Esperar a que termine la transición antes de llamar al callback
+        fadeElement.addEventListener('transitionend', () => {
           callback(); // Ejecutar la función de cambio de escena
-        }, 1500); // Tiempo del efecto de desvanecimiento (1.5s)
+        }, { once: true });
       }
 
      // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
