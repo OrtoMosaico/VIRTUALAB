@@ -27,8 +27,7 @@
         id="camera"
         camera 
         look-controls 
-        position="0 1.6 0" 
-        rotation="0 0 0"
+        position="0 1.6 0"
         zoom="1"
       >
         <a-cursor id="cursor" color="#FF0000" raycaster="objects: .clickable" fuse="true" fuse-timeout="500"></a-cursor>
@@ -44,23 +43,17 @@
     </a-scene>
 
     <script>
-      // Añadir los enlaces de navegación utilizando eventos 'click' con efecto de zoom hacia adelante
+      // Añadir los enlaces de navegación utilizando eventos 'click' de manera más simple
       document.querySelector("#to-scene8").addEventListener("click", () => {
-        zoomIn(() => {
-          window.location.href = "./8.html";
-        });
+        window.location.href = "./8.html";
       });
 
       document.querySelector("#to-scene31").addEventListener("click", () => {
-        zoomIn(() => {
-          window.location.href = "./31.html";
-        });
+        window.location.href = "./31.html";
       });
 
       document.querySelector("#to-scene5").addEventListener("click", () => {
-        zoomIn(() => {
-          window.location.href = "./5.html";
-        });
+        window.location.href = "./5.html";
       });
 
       // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
