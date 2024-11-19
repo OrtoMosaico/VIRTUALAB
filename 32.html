@@ -36,26 +36,39 @@
       <!-- Imagen 360 de la primera escena, con rotación inicial -->
       <a-sky src="./images/3_2 - Panorama.jpg" rotation="0 30 0"></a-sky>
 
-      <!-- Botones personalizados como esferas con transparencia y evento de cambio de color al pasar el cursor -->
-      <a-sphere id="to-scene6" position="7.980 1 -6.700" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
-      <a-sphere id="to-scene29" position="-8.740 0.110 -1.840" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
-      <a-sphere id="to-scene10" position="-6.680 1.060 -20.110" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <a-sphere id="to-scene33" position="-11.300 0 -5.620" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <a-sphere id="to-scene36" position="-2.040 0.110 14.240" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <a-sphere id="to-scene37" position="7.270 0.110 -9.160" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <a-sphere id="to-scene4" position="12.030 1.060 5.940" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <a-sphere id="to-scene34" position="-15.160 1.060 -0.620" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
+      <a-sphere id="to-scene35" position="-18.990 1.060 -18.390" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
     </a-scene>
 
     <script>
       // Añadir los enlaces de navegación utilizando eventos 'click' de manera más simple
-      document.querySelector("#to-scene6").addEventListener("click", () => {
-        window.location.href = "./6.html";
+      document.querySelector("#to-scene33").addEventListener("click", () => {
+        window.location.href = "./32.html";
       });
 
-      document.querySelector("#to-scene29").addEventListener("click", () => {
-        window.location.href = "./29.html";
+      document.querySelector("#to-scene36").addEventListener("click", () => {
+        window.location.href = "./36.html";
       });
     
-      document.querySelector("#to-scene10").addEventListener("click", () => {
-        window.location.href = "./10.html";
+      document.querySelector("#to-scene37").addEventListener("click", () => {
+        window.location.href = "./37.html";
       });
 
+      document.querySelector("#to-scene4").addEventListener("click", () => {
+        window.location.href = "./4.html";
+      });
+
+      document.querySelector("#to-scene34").addEventListener("click", () => {
+        window.location.href = "./34.html";
+      });
+
+            document.querySelector("#to-scene35").addEventListener("click", () => {
+        window.location.href = "./35.html";
+      });
 // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
 const camera = document.querySelector('#camera');
       let initialDistance = null;
