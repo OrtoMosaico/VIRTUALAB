@@ -1,7 +1,7 @@
 /* Estilo para las esferas en la escena de A-Frame */
 .clickable {
   opacity: 0.6;
-  color: #a3a3a3;
+  color: #abb455;
   transition: transform 0.3s ease;
 }
 
