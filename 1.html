@@ -6,8 +6,59 @@
     <script src="https://cdn.jsdelivr.net/gh/ngokevin/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
     <link rel="icon" href="./images/icon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/VISUALESTOUR.CSS">
-    <link rel="stylesheet" href="./styles/ESFERAS.CSS">
+    <style>
+      /* Estilo para el logo de la empresa */
+      #logo {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        width: 150px;
+        z-index: 10;
+      }
+
+      /* Estilo para el cuadro de instrucciones */
+      #instructions {
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 75%;
+        max-width: 400px;
+        background-color: #2c2f33;
+        color: #ffffff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 15;
+        font-family: Arial, sans-serif;
+      }
+
+      #instructions h2 {
+        margin-top: 0;
+        font-size: 1.5em;
+        color: #c32025;
+      }
+
+      #instructions p {
+        font-size: 1em;
+        line-height: 1.5;
+      }
+
+      #close-instructions {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+
+      #close-instructions:hover {
+        color: #ff5555;
+      }
+    </style>
   </head>
   <body>
     <!-- Logo de la empresa -->
@@ -39,8 +90,8 @@
       <a-sky src="./images/1_1 - Panorama.jpg" rotation="0 -87 0"></a-sky>
 
       <!-- Botones personalizados como esferas con transparencia y bajados -->
-      <a-sphere id="to-scene2" position="-14.090 0.6 -15.460" radius="0.5" class="clickable sphere"></a-sphere>
-      <a-sphere id="to-scene3" position="15.670 0.6 -15.460" radius="0.5" class="clickable sphere"></a-sphere>
+      <a-sphere id="to-scene2" position="-14.090 0.6 -15.460" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
+      <a-sphere id="to-scene3" position="15.670 0.6 -15.460" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable"></a-sphere>
     </a-scene>
 
     <script>
