@@ -27,7 +27,9 @@
         id="camera"
         camera 
         look-controls 
-        position="0 1.6 0"
+        position="0 1.6 0" 
+        rotation="0 0 0"
+        zoom="1"
       >
         <a-cursor id="cursor" color="#FF0000" raycaster="objects: .clickable" fuse="true" fuse-timeout="500"></a-cursor>
       </a-entity>
@@ -44,40 +46,22 @@
     <script>
       // Añadir los enlaces de navegación utilizando eventos 'click' con efecto de zoom hacia adelante
       document.querySelector("#to-scene8").addEventListener("click", () => {
-        zoomIn("5.601 -6.307 12.823", () => {
+        zoomIn(() => {
           window.location.href = "./8.html";
         });
       });
 
       document.querySelector("#to-scene31").addEventListener("click", () => {
-        zoomIn("-6.220 -5.000 -13.690", () => {
+        zoomIn(() => {
           window.location.href = "./31.html";
         });
       });
 
       document.querySelector("#to-scene5").addEventListener("click", () => {
-        zoomIn("12.669 0.110 -14.175", () => {
+        zoomIn(() => {
           window.location.href = "./5.html";
         });
       });
-
-      // Función para hacer el efecto de zoom hacia adelante (zoom in) utilizando animación
-      function zoomIn(targetPosition, callback) {
-        const camera = document.querySelector('#camera');
-
-        // Crear una animación para acercar la cámara a la posición del objetivo
-        const animation = document.createElement('a-animation');
-        animation.setAttribute('attribute', 'position');
-        animation.setAttribute('to', targetPosition);
-        animation.setAttribute('dur', '1500'); // Duración de la animación en milisegundos
-        animation.setAttribute('easing', 'ease-in-out');
-        animation.addEventListener('animationend', () => {
-          callback(); // Ejecutar la función de cambio de escena cuando la animación termine
-        });
-
-        // Añadir la animación a la cámara
-        camera.appendChild(animation);
-      }
 
       // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
       const camera = document.querySelector('#camera');
