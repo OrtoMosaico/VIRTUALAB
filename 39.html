@@ -15,19 +15,11 @@
         z-index: 10;
       }
 
- /* Estilo para el desvanecimiento */
- #fade {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: black;
-        opacity: 0;
-        transition: opacity 1.5s ease-in-out;
-        pointer-events: none; /* No bloquear la interacción del cursor */
-        z-index: 20; /* Asegúrate de que esté por encima de todo */
+ /* Estilo para el zoom */
+ #zoom {
+        transition: transform 1.5s ease-in-out;
       }
+
     </style>
   </head>
   <body>
@@ -103,15 +95,40 @@
         });
       });
 
-     // Función para hacer el efecto de desvanecimiento
-     function fadeOut(callback) {
-        const fadeElement = document.getElementById('fade');
-        fadeElement.style.opacity = '1'; // Cambiar la opacidad a 1 para el desvanecimiento
+    // Función para hacer el efecto de zoom al punto de la mira
+      function zoomIn(callback) {
+        const camera = document.querySelector('#camera');
+        const cursor = document.querySelector('#cursor');
 
-        // Esperar a que termine la transición antes de llamar al callback
-        fadeElement.addEventListener('transitionend', () => {
-          callback(); // Ejecutar la función de cambio de escena
-        }, { once: true });
+        // Obtener la dirección hacia la cual está apuntando la cámara
+        const direction = new THREE.Vector3();
+        camera.object3D.getWorldDirection(direction);
+
+        // Animar la posición de la cámara hacia adelante simulando un zoom al punto donde la mira está apuntando
+        const animationDuration = 1500; // Duración de la animación en milisegundos
+        const distanceToMove = 5; // Distancia que queremos avanzar
+
+        const startPosition = camera.object3D.position.clone();
+        const endPosition = startPosition.add(direction.multiplyScalar(distanceToMove));
+
+        let startTime = null;
+
+        function animateZoom(time) {
+          if (!startTime) startTime = time;
+          const elapsed = time - startTime;
+          const progress = Math.min(elapsed / animationDuration, 1); // Progreso de 0 a 1
+
+          // Interpolación lineal entre la posición inicial y la posición final
+          camera.object3D.position.lerpVectors(startPosition, endPosition, progress);
+
+          if (progress < 1) {
+            requestAnimationFrame(animateZoom);
+          } else {
+            callback(); // Ejecutar la función de cambio de escena cuando la animación termine
+          }
+        }
+
+        requestAnimationFrame(animateZoom);
       }
 
      // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
