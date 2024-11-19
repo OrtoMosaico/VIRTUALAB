@@ -14,11 +14,6 @@
         width: 150px; /* Ajusta el tamaño del logo */
         z-index: 10;
       }
-
-      /* Estilo para el zoom */
-      #zoom {
-        transition: transform 1.5s ease-in;
-      }
     </style>
   </head>
   <body>
@@ -34,7 +29,6 @@
         look-controls 
         position="0 1.6 0" 
         rotation="0 0 0"
-        zoom="1"
       >
         <a-cursor id="cursor" color="#FF0000" raycaster="objects: .clickable" fuse="true" fuse-timeout="500"></a-cursor>
       </a-entity>
@@ -49,7 +43,7 @@
     </a-scene>
 
     <script>
-      // Añadir los enlaces de navegación utilizando eventos 'click' de manera más simple con efecto de zoom
+      // Añadir los enlaces de navegación utilizando eventos 'click' con efecto de zoom hacia adelante
       document.querySelector("#to-scene8").addEventListener("click", () => {
         zoomIn(() => {
           window.location.href = "./8.html";
@@ -68,7 +62,7 @@
         });
       });
 
-      // Función para hacer el efecto de zoom al punto de la mira
+      // Función para hacer el efecto de zoom hacia adelante (zoom in)
       function zoomIn(callback) {
         const camera = document.querySelector('#camera');
 
@@ -76,13 +70,11 @@
         const direction = new THREE.Vector3();
         camera.object3D.getWorldDirection(direction);
 
-        // Animar la posición de la cámara hacia adelante simulando un zoom al punto donde la mira está apuntando
-        const animationDuration = 1500; // Duración de la animación en milisegundos
-        const distanceToMove = 5; // Distancia que queremos avanzar
-
+        // Definir la posición inicial y final para la animación
         const startPosition = camera.object3D.position.clone();
-        const endPosition = startPosition.add(direction.multiplyScalar(distanceToMove));
+        const endPosition = startPosition.add(direction.multiplyScalar(5)); // Avanzar hacia adelante 5 unidades
 
+        const animationDuration = 1500; // Duración de la animación en milisegundos
         let startTime = null;
 
         function animateZoom(time) {
