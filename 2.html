@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Recorrido Virtual - Escena 1</title>
+    <title>Recorrido Laboratorio Virtual 360°</title>
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/ngokevin/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
     <style>
@@ -34,7 +34,7 @@
       </a-entity>
 
       <!-- Imagen 360 de la primera escena -->
-      <a-sky src="./images/1_2 - Panorama.jpg"></a-sky>
+      <a-sky src="./images/1_2 - Panorama.jpg" rotation="0 -30 0"></a-sky>
 
       <!-- Botones personalizados como esferas con transparencia -->
       <a-sphere id="to-scene6" position="-20.931 1 0.328" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
