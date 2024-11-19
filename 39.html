@@ -15,19 +15,15 @@
         z-index: 10;
       }
 
- /* Estilo para el zoom */
- #zoom {
+      /* Estilo para el zoom */
+      #zoom {
         transition: transform 1.5s ease-in-out;
       }
-
     </style>
   </head>
   <body>
     <!-- Logo de la empresa -->
     <img id="logo" src="./images/Logo_Lara.png" alt="Logo de la Empresa">
-
-    <!-- Div para crear el efecto de desvanecimiento -->
-    <div id="fade"></div>
 
     <!-- Escena de A-Frame -->
     <a-scene>
@@ -53,52 +49,28 @@
     </a-scene>
 
     <script>
-      // Precargar los activos después de que la escena se haya cargado completamente
-      window.addEventListener('load', () => {
-        const assets = document.createElement('a-assets');
-        
-        // Precargando las imágenes de las siguientes escenas
-        const scene8Img = document.createElement('img');
-        scene8Img.setAttribute('id', 'scene8-img');
-        scene8Img.setAttribute('src', './images/3_8 - Panorama.jpg');
-        assets.appendChild(scene8Img);
-
-        const scene31Img = document.createElement('img');
-        scene31Img.setAttribute('id', 'scene31-img');
-        scene31Img.setAttribute('src', './images/3_10 - Panorama.jpg');
-        assets.appendChild(scene31Img);
-
-        const scene5Img = document.createElement('img');
-        scene5Img.setAttribute('id', 'scene5-img');
-        scene5Img.setAttribute('src', './images/1_5 - Panorama.jpg');
-        assets.appendChild(scene5Img);
-
-        document.querySelector('a-scene').appendChild(assets);
-      });
-
-      // Añadir los enlaces de navegación utilizando eventos 'click' de manera más simple con fade
+      // Añadir los enlaces de navegación utilizando eventos 'click' de manera más simple con efecto de zoom
       document.querySelector("#to-scene8").addEventListener("click", () => {
-        fadeOut(() => {
+        zoomIn(() => {
           window.location.href = "./8.html";
         });
       });
 
       document.querySelector("#to-scene31").addEventListener("click", () => {
-        fadeOut(() => {
+        zoomIn(() => {
           window.location.href = "./31.html";
         });
       });
 
       document.querySelector("#to-scene5").addEventListener("click", () => {
-        fadeOut(() => {
+        zoomIn(() => {
           window.location.href = "./5.html";
         });
       });
 
-    // Función para hacer el efecto de zoom al punto de la mira
+      // Función para hacer el efecto de zoom al punto de la mira
       function zoomIn(callback) {
         const camera = document.querySelector('#camera');
-        const cursor = document.querySelector('#cursor');
 
         // Obtener la dirección hacia la cual está apuntando la cámara
         const direction = new THREE.Vector3();
@@ -131,8 +103,8 @@
         requestAnimationFrame(animateZoom);
       }
 
-     // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
-const camera = document.querySelector('#camera');
+      // Funcionalidad de Zoom con Scroll del Ratón y Gestos de Pinza
+      const camera = document.querySelector('#camera');
       let initialDistance = null;
 
       // Zoom con el Scroll del Ratón
