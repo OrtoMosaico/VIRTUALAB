@@ -37,14 +37,7 @@
 
     <!-- Escena de A-Frame -->
     <a-scene>
-      <!-- Precarga de activos -->
-      <a-assets>
-        <!-- Precargando las imágenes de las siguientes escenas -->
-        <img id="scene8-img" src="./images/8.jpg">
-        <img id="scene31-img" src="./images/31.jpg">
-        <img id="scene5-img" src="./images/5.jpg">
-      </a-assets>
-
+      
       <!-- Añadir un cursor para interactuar con la escena -->
       <a-entity 
         id="camera"
@@ -65,6 +58,15 @@
       <a-sphere id="to-scene31" position="-6.220 -5.000 -13.690" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
       <a-sphere id="to-scene5" position="12.669 0.110 -14.175" radius="0.5" color="#a3a3a3" material="opacity: 0.6; transparent: true" class="clickable" event-set__mouseenter="scale: 1.2 1.2 1.2" event-set__mouseleave="scale: 1 1 1"></a-sphere>
     </a-scene>
+
+<!-- Precarga de activos -->
+<a-assets>
+  <!-- Precargando las imágenes de las siguientes escenas -->
+  <img id="scene8-img" src="./images/3_8 - Panorama.jpg">
+  <img id="scene31-img" src="./images/3_10 - Panorama.jpg">
+  <img id="scene5-img" src="./images/1_5 - Panorama.jpg">
+</a-assets>
+
 
     <script>
       // Añadir los enlaces de navegación utilizando eventos 'click' de manera más simple con fade
